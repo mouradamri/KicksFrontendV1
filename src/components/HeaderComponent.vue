@@ -64,7 +64,7 @@
             <!-- Logo -->
             <a href="#" class="flex">
               <span class="sr-only">KicksKarma</span>
-              <img class="h-8 w-auto" src="logo.png" alt="" />
+              <img class="h-8 w-auto" src="/logo.png" alt="" />
             </a>
 
             <div class="flex flex-1 items-center justify-end">
