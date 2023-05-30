@@ -38,9 +38,14 @@ const routes = [
     component: () => import("@/views/search.vue"),
   },
   {
-    path: "/privacy",
+    path: "/privacy-policy",
     name: "privacy",
     component: () => import("@/views/privacy.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "404",
+    component: () => import("@/views/404.vue"),
   },
 ];
 
