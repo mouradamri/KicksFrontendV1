@@ -48,7 +48,7 @@
                 <Bars3Icon class="h-6 w-6" aria-hidden="true" />
               </button>
 
-              <a href="#" class="ml-2 p-2 text-gray-400 hover:text-gray-500">
+              <a href="search" class="ml-2 p-2 text-gray-400 hover:text-gray-500">
                 <span class="sr-only">Search</span>
                 <MagnifyingGlassIcon class="h-6 w-6" aria-hidden="true" />
               </a>
@@ -62,7 +62,7 @@
             </PopoverGroup>
 
             <!-- Logo -->
-            <a href="#" class="flex">
+            <a href="/" class="flex">
               <span class="sr-only">KicksKarma</span>
               <img class="h-8 w-auto" src="/logo.png" alt="" />
             </a>
@@ -75,7 +75,7 @@
               </a>
 
               <!-- Search -->
-              <a href="#" class="ml-6 hidden p-2 text-gray-400 hover:text-gray-500 lg:block">
+              <a href="search" class="ml-6 hidden p-2 text-gray-400 hover:text-gray-500 lg:block">
                 <span class="sr-only">Search</span>
                 <MagnifyingGlassIcon class="h-6 w-6" aria-hidden="true" />
               </a>
@@ -88,7 +88,7 @@
 
               <!-- Cart -->
               <div class="ml-4 flow-root lg:ml-6">
-                <a href="#" class="group -m-2 flex items-center p-2">
+                <a href="cart" class="group -m-2 flex items-center p-2">
                   <ShoppingBagIcon class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
                   <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
                   <span class="sr-only">items in cart, view bag</span>
