@@ -1,15 +1,16 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
-  {
-    path: "",
-    name: "home",
-    component: () => import("@/views/home.vue"),
-  },
+  { path: "", name: "home", component: () => import("@/views/home.vue") },
   {
     path: "/products",
     name: "products",
     component: () => import("@/views/products.vue"),
+  },
+  {
+    path: "/product",
+    name: "product",
+    component: () => import("@/views/product.vue"),
   },
   {
     path: "/feedbacks",
@@ -37,7 +38,7 @@ const routes = [
     component: () => import("@/views/search.vue"),
   },
   {
-    path: "/privacy-policy",
+    path: "/privacy",
     name: "privacy",
     component: () => import("@/views/privacy.vue"),
   },

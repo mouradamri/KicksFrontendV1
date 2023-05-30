@@ -34,7 +34,7 @@
       id: 1,
       name: 'Nike Dunk Low',
       category: 'Pink Velvet (GS)',
-      href: '#',
+      href: '/product',
       price: '€149',
       imageSrc: 'https://images.stockx.com/images/Nike-Dunk-Low-Pink-Velvet-GS-Product.jpg',
       imageAlt:
