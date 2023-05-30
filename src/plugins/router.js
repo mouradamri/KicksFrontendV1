@@ -4,42 +4,42 @@ const routes = [
   {
     path: "",
     name: "home",
-    component: () => import("@/views/static/home.vue"),
+    component: () => import("@/views/home.vue"),
   },
   {
     path: "/products",
     name: "products",
-    component: () => import("@/views/dynamic/products.vue"),
+    component: () => import("@/views/products.vue"),
   },
   {
     path: "/feedbacks",
     name: "feedbacks",
-    component: () => import("@/views/dynamic/feedbacks.vue"),
+    component: () => import("@/views/feedbacks.vue"),
   },
   {
     path: "/about",
     name: "about",
-    component: () => import("@/views/static/about.vue"),
+    component: () => import("@/views/about.vue"),
   },
   {
     path: "/contact",
     name: "contact",
-    component: () => import("@/views/static/contact.vue"),
+    component: () => import("@/views/contact.vue"),
   },
   {
     path: "/cart",
     name: "cart",
-    component: () => import("@/views/dynamic/cart.vue"),
+    component: () => import("@/views/cart.vue"),
   },
   {
     path: "/search",
     name: "search",
-    component: () => import("@/views/dynamic/search.vue"),
+    component: () => import("@/views/search.vue"),
   },
   {
     path: "/privacy-policy",
     name: "privacy",
-    component: () => import("@/views/static/privacy.vue"),
+    component: () => import("@/views/privacy.vue"),
   },
 ];
 
