@@ -11,8 +11,8 @@
               <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">KicksKarma</h1>
               <p class="mt-6 text-lg leading-8 text-gray-600">The best markeplace for limited edition sneakers.</p>
               <div class="mt-10 flex items-center gap-x-6">
-                <a href="products" class="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Shop Now</a>
-                <a href="#" class="text-base font-semibold leading-7 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+                <router-link to="/products" class="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Shop Now</router-link>
+                <router-link to="#" class="text-base font-semibold leading-7 text-gray-900">Learn more <span aria-hidden="true">→</span></router-link>
               </div>
             </div>
           </div>

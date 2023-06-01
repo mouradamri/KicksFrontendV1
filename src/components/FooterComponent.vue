@@ -3,7 +3,7 @@
       <div class="mx-auto max-w-7xl overflow-hidden py-20 px-6 sm:py-24 lg:px-8">
         <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           <div v-for="item in navigation.main" :key="item.name" class="pb-6">
-            <a :href="item.href" class="text-sm leading-6 text-gray-600 hover:text-gray-900">{{ item.name }}</a>
+            <router-link :to="item.href" class="text-sm leading-6 text-gray-600 hover:text-gray-900">{{ item.name }}</router-link>
           </div>
         </nav>
         <div class="mt-10 flex justify-center space-x-10">

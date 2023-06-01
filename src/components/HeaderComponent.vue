@@ -21,7 +21,7 @@
 
               <div class="space-y-6 border-t border-gray-200 py-6 px-4">
                 <div v-for="page in navigation.pages" :key="page.name" class="flow-root">
-                  <a :href="page.href" class="-m-2 block p-2 font-medium text-gray-900">{{ page.name }}</a>
+                  <router-link :to="page.href" class="-m-2 block p-2 font-medium text-gray-900">{{ page.name }}</router-link>
                 </div>
               </div>
 
@@ -56,8 +56,8 @@
 
             <!-- Flyout menus -->
             <PopoverGroup class="hidden lg:block lg:flex-1 lg:self-stretch">
-              <div class="flex h-full space-x-8">
-                <a v-for="page in navigation.pages" :key="page.name" :href="page.href" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">{{ page.name }}</a>
+              <div class="flex h-full space-x-8">                
+                <router-link v-for="page in navigation.pages" :key="page.name" :to="page.href" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">{{ page.name }}</router-link>
               </div>
             </PopoverGroup>
 
