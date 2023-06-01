@@ -14,10 +14,10 @@
             </div>
             <div class="mt-4 flex items-center justify-between space-x-8 text-base font-medium text-gray-900">
               <h3>
-                <a href="#">
+                <router-link :to="product.href">
                   <span aria-hidden="true" class="absolute inset-0" />
                   {{ product.name }}
-                </a>
+                </router-link>
               </h3>
               <p>{{ product.price }}</p>
             </div>
@@ -34,9 +34,19 @@
       id: 1,
       name: 'Nike Dunk Low',
       category: 'Pink Velvet (GS)',
-      href: '/product',
-      price: '€149',
+      href: '/product/1',
+      price: '€139',
       imageSrc: 'https://images.stockx.com/images/Nike-Dunk-Low-Pink-Velvet-GS-Product.jpg',
+      imageAlt:
+        'Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.',
+    },
+    {
+      id: 1,
+      name: 'adidas Yeezy Boost 350 V2',
+      category: 'Carbon Beluga',
+      href: '/product/2',
+      price: '€139',
+      imageSrc: 'https://images.stockx.com/images/adidas-Yeezy-350-V2-Carbon-Beluga-Updated.jpg',
       imageAlt:
         'Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.',
     },
