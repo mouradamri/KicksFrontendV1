@@ -1,4 +1,6 @@
 <template>
+    <title>Search - KicksKarma</title>
+
     <TransitionRoot :show="open" as="template" @after-leave="query = ''" appear>
       <Dialog as="div" class="relative z-10" @close="open = false">
         <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
@@ -51,6 +53,7 @@
   ]
   
   const open = ref(true)
+
   const query = ref('')
   const filteredPeople = computed(() =>
     query.value === ''

@@ -1,4 +1,6 @@
 <template>
+    <title>{{ product.name }} - KicksKarma</title>
+
     <div class="bg-white">
       <div class="pt-6 pb-16 sm:pb-24">
         <nav aria-label="Breadcrumb" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -101,7 +103,6 @@
   
   <script setup>
   import { ref } from 'vue'
-  import { StarIcon } from '@heroicons/vue/20/solid'
   import { RadioGroup, RadioGroupLabel, RadioGroupOption } from '@headlessui/vue'
   import { CurrencyDollarIcon, GlobeAmericasIcon } from '@heroicons/vue/24/outline'
   

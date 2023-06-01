@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-white pt-16 lg:py-24">
+    <title>Feedbacks - KicksKarma</title>
+
+<div class="bg-white pt-16 lg:py-24">
     <div class="bg-indigo-600 pb-16 lg:relative lg:z-10 lg:pb-0">
       <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8">
         <div class="relative lg:-my-8">
