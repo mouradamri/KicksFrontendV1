@@ -47,7 +47,7 @@
                 <Bars3Icon class="h-6 w-6" aria-hidden="true" />
               </button>
 
-              <a href="search" class="ml-2 p-2 text-gray-400 hover:text-gray-500">
+              <a href="#search" @click="oppen = true" class="ml-2 p-2 text-gray-400 hover:text-gray-500">
                 <span class="sr-only">Search</span>
                 <MagnifyingGlassIcon class="h-6 w-6" aria-hidden="true" />
               </a>
@@ -74,16 +74,48 @@
               </a>
 
               <!-- Search -->
-              <a href="search" class="ml-6 hidden p-2 text-gray-400 hover:text-gray-500 lg:block">
+              <a href="#search" @click="oppen = true" class="ml-6 hidden p-2 text-gray-400 hover:text-gray-500 lg:block">
                 <span class="sr-only">Search</span>
                 <MagnifyingGlassIcon class="h-6 w-6" aria-hidden="true" />
               </a>
 
+              
+    <TransitionRoot :show="oppen" as="template" @after-leave="query = ''" appear>
+      <Dialog as="div" class="relative z-10" @close="oppen = false">
+        <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
+          <div class="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity" />
+        </TransitionChild>
+  
+        <div class="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:p-20">
+          <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100" leave="ease-in duration-200" leave-from="opacity-100 scale-100" leave-to="opacity-0 scale-95">
+            <DialogPanel class="mx-auto max-w-xl transform rounded-xl bg-white p-2 shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
+              <Combobox @update:modelValue="onSelect">
+                <ComboboxInput class="w-full rounded-md border-0 bg-gray-100 px-4 py-2.5 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Search..." @change="query = $event.target.value" />
+  
+                <ComboboxOptions v-if="filteredPeople.length > 0" static class="-mb-2 max-h-72 scroll-py-2 overflow-y-auto py-2 text-sm text-gray-800">
+                  <ComboboxOption v-for="person in filteredPeople" :key="person.id" :value="person" as="template" v-slot="{ active }">
+                    <li :class="['cursor-default select-none rounded-md px-4 py-2', active && 'bg-indigo-600 text-white']">
+                      {{ person.name }}
+                    </li>
+                  </ComboboxOption>
+                </ComboboxOptions>
+  
+                <div v-if="query !== '' && filteredPeople.length === 0" class="py-14 px-4 text-center sm:px-14">
+                  <UsersIcon class="mx-auto h-6 w-6 text-gray-400" aria-hidden="true" />
+                  <p class="mt-4 text-sm text-gray-900">Nothing found. Try again</p>
+                </div>
+              </Combobox>
+            </DialogPanel>
+          </TransitionChild>
+        </div>
+      </Dialog>
+    </TransitionRoot>
+
               <!-- Account -->
-              <a href="#" class="p-2 text-gray-400 hover:text-gray-500 lg:ml-4">
+              <router-link to="/profile" class="p-2 text-gray-400 hover:text-gray-500 lg:ml-4">
                 <span class="sr-only">Account</span>
                 <UserIcon class="h-6 w-6" aria-hidden="true" />
-              </a>
+              </router-link>
 
               <!-- Cart -->
               <div class="ml-4 flow-root lg:ml-6">
@@ -102,8 +134,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { UsersIcon } from '@heroicons/vue/24/outline'
 import {
+  Combobox,
+  ComboboxInput,
+  ComboboxOptions,
+  ComboboxOption,
   Dialog,
   DialogPanel,
   PopoverGroup,
@@ -116,10 +153,29 @@ const navigation = {
   pages: [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
-    { name: 'Feedbacks', href: '/feedbacks' },
+    { name: 'Pre Order', href: '/preorder' },
     { name: 'Contact', href: '/contact' },
   ],
 }
 
 const open = ref(false)
+const oppen = ref(false)
+
+  const people = [
+    { id: 1, name: 'Leslie Alexander', url: '#' },
+    // More people...
+  ]
+  
+  const query = ref('')
+  const filteredPeople = computed(() =>
+    query.value === ''
+      ? []
+      : people.filter((person) => {
+          return person.name.toLowerCase().includes(query.value.toLowerCase())
+        })
+  )
+  
+  function onSelect(person) {
+    window.location = person.url
+  }
 </script>

@@ -34,7 +34,7 @@
                       <span>{{ product.inStock ? 'In stock' : `Will ship in ${product.leadTime}` }}</span>
                     </p>
                     <div class="ml-4">
-                      <button type="button" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                      <button type="button" class="text-sm font-medium text-red-600 hover:text-gray-500">
                         <span>Remove</span>
                       </button>
                     </div>
@@ -59,13 +59,13 @@
             </div>
   
             <div class="mt-10">
-              <button type="submit" class="w-full rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">Checkout</button>
+              <button type="submit" class="w-full rounded-md border border-transparent bg-black py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50">Checkout</button>
             </div>
   
             <div class="mt-6 text-center text-sm">
               <p>
                 or
-                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
+                <a href="#" class="font-medium text-black-600 hover:text-gray-800">
                   Continue Shopping
                   <span aria-hidden="true"> &rarr;</span>
                 </a>
